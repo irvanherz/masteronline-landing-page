@@ -1,0 +1,1 @@
+export const IMAGE_BASEURL = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_IMAGE_BASEURL : ''
