@@ -1,8 +1,10 @@
 import Hero from '@/app/components/Hero'
 import StdLayout from '@/components/StdLayout'
 import Achievements from './components/Achievements'
+import FAQ from './components/FAQ'
 import Features from './components/Features'
 import Integrations from './components/Integrations'
+import Partnership from './components/Partnership'
 import Testimonial from './components/Testimonial'
 
 export default function Home() {
@@ -13,6 +15,8 @@ export default function Home() {
       <Integrations />
       <Achievements />
       <Testimonial />
+      <FAQ />
+      <Partnership />
     </StdLayout>
   )
 }
