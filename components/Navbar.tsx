@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 
-import { IMAGE_BASEURL } from '@/app/config';
+import { BUNINESS_PARTNER_URL, IMAGE_BASEURL } from '@/app/config';
 import { useGSAP } from '@gsap/react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -14,12 +14,11 @@ import { useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-
 const navigation = [
     { id: 'home', name: 'Home', href: '/' },
     { id: 'about', name: 'About', href: '/about' },
     { id: 'pricing', name: 'Pricing', href: '/pricing' },
-    // { id: 'partner', name: 'Partner', href: '#' },
+    { id: 'partner', name: 'Partner', href: BUNINESS_PARTNER_URL },
 ]
 
 type NavbarProps = {

@@ -2,9 +2,9 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Element, Link, scrollSpy } from "react-scroll";
-import { useMediaQuery } from 'usehooks-ts';
+import { useMediaQuery } from "usehooks-ts";
 import { AboutErasoft, AboutMasterOnline } from "./AboutCompany";
 import { AboutPartnerAccounting, AboutPartnerEcommerce, AboutPartnerLM, AboutPartnerMarketplace, AboutPartnerPOS } from "./AboutPartners";
 
@@ -58,66 +58,106 @@ const SECTIONS = [
     }
 ]
 
+type MenuItemProps = { menu: any }
+
+function MenuItem({ menu }: MenuItemProps) {
+    const ref = useRef<HTMLDivElement>(null)
+
+    const handleSetActive = () => {
+        ref.current?.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'center' })
+    }
+
+    return (
+        <div className="text-nowrap p-4" ref={ref}>
+            <Link
+                key={menu.id}
+                className="flex-none font-bold cursor-pointer"
+                activeClass="text-paprika-900"
+                to={menu.id}
+                spy={true}
+                smooth={true}
+                offset={-120}
+                duration={500}
+                onSetActive={handleSetActive}
+            >
+                {menu.title}
+            </Link>
+        </div>
+    )
+}
+
+function MobileSectionNav() {
+    useGSAP(() => {
+        gsap.to("#mobile-section-nav", {
+            top: 64,
+            duration: 0.25,
+            boxShadow: '0 0 8px rgba(0,0,0,0.25)',
+            scrollTrigger: {
+                trigger: '#mobile-section-nav',
+                start: '0 70px', //trigger, viewport
+                // markers: true,
+                toggleActions: 'play none none reverse', //onEnter, onLeave, onEnterBack, and onLeaveBack
+                // toggleClass: {
+                //     className: 'backdrop-blur-lg',
+                //     targets: '#desktop-section-nav'
+                // },
+            }
+        })
+    }, { dependencies: [], revertOnUpdate: true });
+
+    return (
+        <div className="sticky top-16 px-4 flex flex-row w-full overflow-x-auto bg-white bg-opacity-85 filter backdrop-blur-lg snap-x snap-mandatory invisible-scroll" id="mobile-section-nav">
+            {SECTIONS.reduce((a, c) => {
+                const other = c.subsections.map(d => <MenuItem key={d.id} menu={d} />)
+                return [...a, ...other]
+            }, [] as any[])}
+        </div>
+    )
+}
+
+function DesktopSectionNav() {
+    return (
+        <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col gap-8 filter" id="desktop-section-nav">
+            {SECTIONS.map(c => {
+                return (
+                    <div key={c.id} className="flex-none flex flex-col gap-4">
+                        <div className="text-slate-600 hidden lg:block">{c.title}</div>
+                        <div className="flex flex-col gap-4">
+                            {c.subsections.map(c => (
+                                <Link
+                                    key={c.id}
+                                    className="flex-none font-bold cursor-pointer"
+                                    activeClass="text-paprika-900"
+                                    to={c.id}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-120}
+                                    duration={500}
+                                >
+                                    {c.title}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
+
 export default function Partners() {
     const isLG = useMediaQuery('(min-width: 1024px)')
     useEffect(() => {
-        // Updating scrollSpy when the component mounts.
         scrollSpy.update();
     }, []);
 
-    useGSAP(() => {
-        if (isLG) return
-        gsap.to("#aboutnav", {
-            position: 'fixed',
-            top: 64,
-            left: 0,
-            right: 0,
-            backgroundColor: 'rgb(255,255,255,0.85)',
-            boxShadow: '0 0 20px rgba(0,0,0,0.25)',
-            padding: '8px 32px',
-            duration: 0.25,
-            scrollTrigger: {
-                trigger: '#aboutnav',
-                start: '0 64px', //trigger, viewport
-                // markers: true,
-                toggleActions: 'play none none reverse', //onEnter, onLeave, onEnterBack, and onLeaveBack
-                toggleClass: {
-                    className: 'backdrop-blur-lg',
-                    targets: '#aboutnav'
-                },
-            }
-        })
-    }, { dependencies: [isLG], revertOnUpdate: true });
-
     return (
         <Element as="div" name="about-partners" className="bg-white text-black">
-            <div className="container mx-auto px-8 py-12 md:py-18 lg:py-24">
-                <div className="flex flex-col lg:flex-row gap-16 py-32">
-                    <div id="aboutnav" className="w-full lg:w-[200px] overflow-x-auto lg:overflow-x-visible beautify-scrollbar sticky top-16">
-                        <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col gap-8">
-                            {SECTIONS.map(c => {
-                                return (
-                                    <div key={c.id} className="flex-none flex flex-col gap-4">
-                                        <div className="text-slate-600 hidden lg:block">{c.title}</div>
-                                        <div className="flex flex-row lg:flex-col gap-4">
-                                            {c.subsections.map(c => (
-                                                <Link
-                                                    key={c.id}
-                                                    className="flex-none font-bold cursor-pointer"
-                                                    activeClass="text-paprika-900"
-                                                    to={c.id}
-                                                    spy={true}
-                                                    smooth={true}
-                                                    offset={-120}
-                                                    duration={500} >
-                                                    {c.title}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
+            {!isLG && <MobileSectionNav />}
+            <div className="container mx-auto px-8 py-12 md:py-18 pt-0 md:pt-24 md:pb-24">
+                <div className="flex flex-col lg:flex-row gap-16 pt-0 md:pt-32 pb-32">
+                    <div className="w-full lg:w-[200px] overflow-x-auto lg:overflow-x-visible beautify-scrollbar sticky top-16">
+                        {isLG && <DesktopSectionNav />}
                     </div>
                     <div className="w-full lg:flex-1 flex flex-col gap-12 md:gap-18 lg:gap-24">
                         {SECTIONS.map(c => (

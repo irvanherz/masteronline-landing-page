@@ -34,9 +34,10 @@ const FAQs = [
         answer: <span>Bisa.</span>
     },
 ]
+
 export default function FAQ() {
     return (
-        <div className="bg-white text-black py-24">
+        <div className="bg-white text-black py-12 md:py-24">
             <div className="container px-8 mx-auto">
                 <div className="flex gap-4 md:gap-6 lg:gap-8 flex-col md:flex-row">
                     <div className="w-full md:w-5/12">

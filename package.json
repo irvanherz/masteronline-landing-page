@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:local": "set NODE_ENV=local && next build",
+    "build:dev": "set NODE_ENV=development && next build",
+    "build:prod": "set NODE_ENV=production && next build",
     "start": "next start",
     "lint": "next lint"
   },

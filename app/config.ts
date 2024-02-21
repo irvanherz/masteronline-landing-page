@@ -1,1 +1,14 @@
-export const IMAGE_BASEURL = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_IMAGE_BASEURL : ''
+const BUSINESS_PARTNER_URLS = {
+    production: 'https://bisnispartner.masteronline.co.id',
+    development: 'https://devbisnis.masteronline.co.id',
+    default: 'https://devbisnis.masteronline.co.id',
+}
+
+const IMAGE_BASEURLS = {
+    production: '/landing-page',
+    development: '/landing-page',
+    default: '',
+}
+
+export const IMAGE_BASEURL = IMAGE_BASEURLS[process.env.NODE_ENV as keyof typeof IMAGE_BASEURLS]
+export const BUNINESS_PARTNER_URL = BUSINESS_PARTNER_URLS[process.env.NODE_ENV as keyof typeof BUSINESS_PARTNER_URLS]

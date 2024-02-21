@@ -31,13 +31,13 @@ export default function AuthLayout({ className, contentWrapperClassName, childre
         <div className={classNames("min-h-screen flex flex-col bg-neutral-100 text-black", className)}>
             <div className={classNames("flex-1", contentWrapperClassName)}>{children}</div>
             <div className="flex-none text-center">
-                <div className="p-8 inline-flex flex-col items-center">
-                    <div className="flex gap-4 pb-2 border-b border-slate-400">
+                <div className="p-4 md:p-8 inline-flex flex-col items-center">
+                    <div className="flex gap-1.5 md:gap-3 lg:gap-4 pb-2 border-b border-slate-400">
                         {MENUS.map(c => (
-                            <a key={c.id} href={c.url} className="font-bold text-sm">{c.title}</a>
+                            <a key={c.id} href={c.url} className="font-bold text-xs md:text-sm">{c.title}</a>
                         ))}
                     </div>
-                    <div className="pt-2 text-slate-600 text-sm">PT Erasoft Teknologi Indonesia &copy; 2017</div>
+                    <div className="pt-2 text-slate-600 text-xs md:text-sm">PT Erasoft Teknologi Indonesia &copy; 2017</div>
                 </div>
             </div>
         </div>
