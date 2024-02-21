@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:local": "set NODE_ENV=local && next build",
-    "build:dev": "set NODE_ENV=development && next build",
-    "build:prod": "set NODE_ENV=production && next build",
+    "build:local": "cross-env STAGE=local next build",
+    "build:dev": "cross-env STAGE=development next build",
+    "build:prod": "cross-env STAGE=production next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -38,6 +38,7 @@
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.13",
     "autoprefixer": "^10.0.1",
+    "cross-env": "^7.0.3",
     "daisyui": "^4.5.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
