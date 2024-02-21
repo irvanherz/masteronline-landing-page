@@ -19,7 +19,7 @@ const USERS = [
     },
     {
         id: '2',
-        icon: `${IMAGE_BASEURL}/images/sinaragung-logo.png`
+        icon: `${IMAGE_BASEURL}/images/morris-logo.png`
     },
     {
         id: '3',
@@ -35,7 +35,7 @@ const USERS = [
     },
     {
         id: '6',
-        icon: `${IMAGE_BASEURL}/images/morris-logo.png`
+        icon: `${IMAGE_BASEURL}/images/sinaragung-logo.png`
     },
     {
         id: '7',
@@ -91,7 +91,7 @@ function DesktopTestimonialCard({ testimonial }: DesktopTestimonialCardProps) {
                         slidesToScroll={1}
                         afterChange={c => setCurrentSlide(c)}
                     >
-                        {testimonial.messages.map((m: any) => <div key={m} className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">“{m}”</div>)}
+                        {testimonial.messages.map((m: any) => <div key={m} className="text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-semibold">“{m}”</div>)}
                     </Slider>
                     <div className='inline-flex gap-4 z-10 items-center self-center md:self-start'>
                         <button className='btn btn-primary btn-circle btn-xs md:btn-md' onClick={handlePrevSlide}><ChevronLeft /></button>

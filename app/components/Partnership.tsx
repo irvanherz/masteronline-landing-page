@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { IMAGE_BASEURL } from "../config";
+import { BUNINESS_PARTNER_URL, IMAGE_BASEURL } from "../config";
 
 export default function Partnership() {
     return (
@@ -11,7 +11,7 @@ export default function Partnership() {
                         <div className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-rubik font-bold pb-4 md:pb-5 lg:pb-6 xl:pb-8 text-white">Tertarik untuk membantu mengembangkan Master Online?</div>
                         <div className="text-sm sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-medium pb-8 md:pb-10 lg:pb-12 xl:pb-16 text-white text-opacity-70">Jadilah partner bisnis Master Online dan dapatkan kompensasi Komisi Referal yang sangat menarik dengan peluang 5 juta pebisnis online di Indonesia. Cocok untuk yang sedang mencari bisnis, penghasilan tambahan atau aktif di sosmed.</div>
                         <div>
-                            <button className="btn btn-primary btn-sm md:btn-md text-sm md:text-base lg:text-lg">Cari tahu selengkapnya</button>
+                            <a target="_blank" href={BUNINESS_PARTNER_URL} className="btn btn-primary btn-sm md:btn-md text-sm md:text-base lg:text-lg">Cari tahu selengkapnya</a>
                         </div>
                     </div>
                 </div>
