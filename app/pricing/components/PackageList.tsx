@@ -56,7 +56,7 @@ function Package({ pkg, className, icon }: PackageProps) {
                 <div className="font-bold text-base md:text-lg lg:text-xl">{pkg.title}</div>
                 <div className="text-xs md:text-sm lg:text-base">{pkg.desc}</div>
             </div>
-            <div className="p-4 md:p-6 lg:p-8 flex items-center min-h-36 gap-2 md:gap-4">
+            <div className="p-4 md:p-6 lg:p-8 flex items-center min-h-24 sm:min-h-40 md:min-h-40 lg:min-h-60 xl:min-h-44 2xl:min-h-36 gap-2 md:gap-4">
                 <div className="flex-1">
                     <div className="text-base md:text-xl lg:text-2xl font-bold">{pkg.monthlyPrice ? <><span>{formatter.format(pkg.monthlyPrice)}</span><span>/</span><span className='inline-block opacity-75'>bulan</span></> : 'Gratis'}</div>
                     {pkg.annualPriceDisc && (

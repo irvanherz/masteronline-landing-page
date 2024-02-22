@@ -150,8 +150,8 @@ function PartnerGroupCard({ title, children, wrapperClassName }: any) {
 
 function PartnerItemCardA({ title, desc, icon, tag }: any) {
     return (
-        <div className="p-4 lg:p-8 flex items-center gap-4 lg:gap-8 text-sm md:text-lg lg:text-xl">
-            <div className="hidden lg:block flex-none">
+        <div className="p-4 lg:p-8 flex items-start gap-4 lg:gap-8 text-sm md:text-lg lg:text-xl">
+            <div className="hidden lg:block flex-none pt-8">
                 <img src={icon} alt={title} className="max-w-12 w-full rounded" />
             </div>
             <div className="flex-1 space-y-4">

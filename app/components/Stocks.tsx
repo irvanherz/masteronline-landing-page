@@ -10,32 +10,38 @@ import { IMAGE_BASEURL } from '../config';
 
 const VARIANTS = {
     tokopedia: {
-        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-2 px-4 py-2 md:py-4 relative md:border-green-500 col-span-1',
+        logoUrl: `${IMAGE_BASEURL}/images/tokopedia-icon.png`,
+        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-3 px-4 py-2 md:py-4 relative md:border-green-500 col-span-1',
         changeNotifClassName: 'absolute inset-0 flex flex-col text-white gap-2 px-4 py-2 md:py-4 bg-green-500',
         circleClassName: 'w-3 h-3 rounded-full bg-green-500'
     },
     shopee: {
-        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-2 px-4 py-2 md:py-4 relative md:border-orange-500 col-span-1',
+        logoUrl: `${IMAGE_BASEURL}/images/shopee-icon.png`,
+        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-3 px-4 py-2 md:py-4 relative md:border-orange-500 col-span-1',
         changeNotifClassName: 'absolute inset-0 flex flex-col text-white gap-2 px-4 py-2 md:py-4 bg-orange-500',
         circleClassName: 'w-3 h-3 rounded-full bg-orange-500'
     },
     lazada: {
-        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-2 px-4 py-2 md:py-4 relative md:border-indigo-900 col-span-1',
+        logoUrl: `${IMAGE_BASEURL}/images/lazada-icon.png`,
+        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-3 px-4 py-2 md:py-4 relative md:border-indigo-900 col-span-1',
         changeNotifClassName: 'absolute inset-0 flex flex-col text-white gap-2 px-4 py-2 md:py-4 bg-indigo-900',
         circleClassName: 'w-3 h-3 rounded-full bg-indigo-900'
     },
     blibli: {
-        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-2 px-4 py-2 md:py-4 relative md:border-sky-500 col-span-1',
+        logoUrl: `${IMAGE_BASEURL}/images/blibli-icon.png`,
+        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-3 px-4 py-2 md:py-4 relative md:border-sky-500 col-span-1',
         changeNotifClassName: 'absolute inset-0 flex flex-col text-white gap-2 px-4 py-2 md:py-4 bg-sky-800',
         circleClassName: 'w-3 h-3 rounded-full bg-sky-500'
     },
     bukalapak: {
-        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-2 px-4 py-2 md:py-4 relative md:border-paprika-900 col-span-1',
+        logoUrl: `${IMAGE_BASEURL}/images/bukalapak-icon.png`,
+        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-3 px-4 py-2 md:py-4 relative md:border-paprika-900 col-span-1',
         changeNotifClassName: 'absolute inset-0 flex flex-col text-white gap-2 px-4 py-2 md:py-4 bg-paprika-900',
         circleClassName: 'w-3 h-3 rounded-full bg-paprika-900'
     },
     tiktok: {
-        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-2 px-4 py-2 md:py-4 relative md:border-slate-800 col-span-1',
+        logoUrl: `${IMAGE_BASEURL}/images/tiktok-icon.png`,
+        containerClassName: 'md:border-t-4 md:rounded overflow-hidden md:bg-white md:bg-opacity-85 text-black flex flex-col gap-3 px-4 py-2 md:py-4 relative md:border-slate-800 col-span-1',
         changeNotifClassName: 'absolute inset-0 flex flex-col text-white gap-2 px-4 py-2 md:py-4 bg-slate-800',
         circleClassName: 'w-3 h-3 rounded-full bg-slate-800'
     },
@@ -84,7 +90,10 @@ function Stock({ id, lastChangeId, title, className, stock }: StockProps) {
 
     return (
         <div className={VARIANTS[id as keyof typeof VARIANTS].containerClassName} ref={containerRef}>
-            <div className='font-bold hidden md:block'>{title}</div>
+            <div className='hidden md:flex gap-2'>
+                <img src={VARIANTS[id as keyof typeof VARIANTS].logoUrl} alt="" className='aspect-1 w-6 object-cover rounded' />
+                <div className='font-bold'>{title}</div>
+            </div>
             <div className='flex items-center gap-2'>
                 <div className='flex-none'>
                     <img src={`${IMAGE_BASEURL}/images/maroon-beanie.png`} alt='Maroon Beanie' className='aspect-square w-8 rounded hidden md:block' />
