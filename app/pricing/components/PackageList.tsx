@@ -1,5 +1,6 @@
 "use client"
 
+import { WHATSAPP_CS_URL } from '@/app/config';
 import { CheckOutlined, KeyboardArrowDownOutlined, KeyboardArrowUpOutlined } from '@mui/icons-material';
 import classNames from 'classnames';
 import { ReactNode, useState } from 'react';
@@ -32,7 +33,7 @@ function PackageInfo() {
             <div className='text-xl md:text-2xl lg:text-3xl'>Seluruh paket berbayar akan mendapatkan <b>potongan harga 1 bulan</b> untuk pembayaran tahunan.</div>
             <div className='space-y-1 md:space-y-2'>
                 <div>Butuh info lebih lanjut?</div>
-                <div><a href="//wa.me/6281393369383?text=Hi+kak%2C+saya+mau+tanya+mengenai+Master+Online%3F" target='_blank' className='font-bold text-paprika-900'>Hubungi Sales &rarr;</a></div>
+                <div><a href={WHATSAPP_CS_URL} target='_blank' className='font-bold text-paprika-900'>Hubungi Sales &rarr;</a></div>
             </div>
         </div>
     )

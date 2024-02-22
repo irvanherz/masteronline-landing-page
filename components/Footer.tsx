@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { IMAGE_BASEURL } from "@/app/config"
+import { IMAGE_BASEURL, WHATSAPP_CS_URL } from "@/app/config"
 import Link from "next/link"
 
 const MENUS = [
@@ -31,7 +31,7 @@ const MENUS = [
     {
         id: 'contact-us',
         title: 'Hubungi Kami',
-        url: '//wa.me/6281393369383?text=Hi+kak%2C+saya+mau+tanya+mengenai+Master+Online%3F'
+        url: WHATSAPP_CS_URL
     },
 ]
 

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 
-import { BUNINESS_PARTNER_URL, IMAGE_BASEURL } from '@/app/config';
+import { BUSINESS_PARTNER_URL, IMAGE_BASEURL } from '@/app/config';
 import { useGSAP } from '@gsap/react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -12,13 +12,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from 'next/link';
 import { useState } from 'react';
 
+const MASTERONLINE_LOGO = `${IMAGE_BASEURL}/images/masteronline-logo.png`
+const MASTERONLINE_LOGO_WHITE = `${IMAGE_BASEURL}/images/masteronline-logo-white.png`
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const navigation = [
     { id: 'home', name: 'Home', href: '/' },
     { id: 'about', name: 'About', href: '/about' },
     { id: 'pricing', name: 'Pricing', href: '/pricing' },
-    { id: 'partner', name: 'Partner', href: BUNINESS_PARTNER_URL },
+    { id: 'partner', name: 'Partner', href: BUSINESS_PARTNER_URL },
 ]
 
 type NavbarProps = {
@@ -71,7 +74,7 @@ export default function Navbar({ activeKey, theme = 'default' }: NavbarProps) {
                         <span className="sr-only">Master Online</span>
                         <img
                             className="h-8 md:h-10 w-auto"
-                            src={theme === 'red' ? `${IMAGE_BASEURL}/images/masteronline-logo-white.png` : `${IMAGE_BASEURL}/images/masteronline-logo.png`}
+                            src={theme === 'red' ? MASTERONLINE_LOGO_WHITE : MASTERONLINE_LOGO}
                             alt="" />
                     </Link>
                 </div>
@@ -114,7 +117,7 @@ export default function Navbar({ activeKey, theme = 'default' }: NavbarProps) {
                             <span className="sr-only">Master Online</span>
                             <img
                                 className="h-8 w-auto"
-                                src={`${IMAGE_BASEURL}/images/masteronline-logo-white.png`}
+                                src={MASTERONLINE_LOGO_WHITE}
                                 alt=""
                             />
                         </Link>

@@ -68,10 +68,10 @@ function MenuItem({ menu }: MenuItemProps) {
     }
 
     return (
-        <div className="text-nowrap p-4" ref={ref}>
+        <div className="text-nowrap whitespace-nowrap p-4" ref={ref}>
             <Link
                 key={menu.id}
-                className="flex-none font-bold cursor-pointer"
+                className="flex-none font-bold cursor-pointer text-nowrap whitespace-nowrap"
                 activeClass="text-paprika-900"
                 to={menu.id}
                 spy={true}

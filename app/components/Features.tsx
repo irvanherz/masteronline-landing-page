@@ -63,12 +63,12 @@ type FeatureCardProps = {
 function FeatureCard({ feature }: FeatureCardProps) {
     const Icon = feature.icon
     return (
-        <div className="w-full lg:w-1/3 p-4 flex items-center lg:items-start gap-4">
+        <div className="w-full lg:w-1/2 xl:w-1/3 p-4 flex items-center lg:items-start gap-4">
             <div className="flex-none lg:hidden">
                 <div className="bg-paprika-900 rounded aspect-square px-2 py-1 text-white text-lg"><Icon /></div>
             </div>
             <div className="flex-1">
-                <div className="border-b-0 lg:border-b-2 border-paprika-900 font-semibold flex text-base md:text-xl lg:text-2xl">
+                <div className="border-b-0 lg:border-b-2 border-paprika-900 font-semibold flex text-base md:text-lg lg:text-xl xl:text-2xl">
                     <div className="flex-1 lg:pb-2">{feature.title}</div>
                     <div className="text-paprika-900 hidden lg:block"><Icon /></div>
                 </div>

@@ -16,7 +16,7 @@ const FAQs = [
         question: "Apabila saya membutuhkan bantuan cara pemakaian atau masalah teknis, saya bisa menghubungi siapa?",
         answer: <div className="space-y-3">
             <p>Silahkan menghubungi kami di no <a href="tel:021 6349318" className="font-bold">021 6349318</a> atau klik logo whatsapp di halaman website ini atau dengan email di <a href="mailto:support@masteronline.co.id" className="font-bold">support@masteronline.co.id</a>.</p>
-            <p>Anda juga dapat melihat video tutorial kami di youtube channel kami di <a href="https://www.youtube.com/@masteronlineomnichannel" className="font-bold">https://www.youtube.com/@masteronlineomnichannel</a></p>
+            <p>Anda juga dapat melihat video tutorial kami di youtube channel kami di <a href="https://www.youtube.com/@masteronlineomnichannel" className="font-bold break-all">https://www.youtube.com/@masteronlineomnichannel</a></p>
         </div>
     },
     {

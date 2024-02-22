@@ -61,11 +61,11 @@ const TESTIMONIALS = [
     }
 ]
 
-type DesktopTestimonialCardProps = {
+type ResponsiveTestimonialCardProps = {
     testimonial: any
 }
 
-function DesktopTestimonialCard({ testimonial }: DesktopTestimonialCardProps) {
+function ResponsiveTestimonialCard({ testimonial }: ResponsiveTestimonialCardProps) {
     const ref = useRef<any>(null)
     const numSlides = testimonial.messages.length
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -91,7 +91,7 @@ function DesktopTestimonialCard({ testimonial }: DesktopTestimonialCardProps) {
                         slidesToScroll={1}
                         afterChange={c => setCurrentSlide(c)}
                     >
-                        {testimonial.messages.map((m: any) => <div key={m} className="text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-semibold">“{m}”</div>)}
+                        {testimonial.messages.map((m: any) => <div key={m} className="text-xl md:text-2xl lg:text-3xl xl:text-3xl font-semibold">“{m}”</div>)}
                     </Slider>
                     <div className='inline-flex gap-4 z-10 items-center self-center md:self-start'>
                         <button className='btn btn-primary btn-circle btn-xs md:btn-md' onClick={handlePrevSlide}><ChevronLeft /></button>
@@ -118,47 +118,6 @@ function DesktopTestimonialCard({ testimonial }: DesktopTestimonialCardProps) {
     )
 }
 
-type MobileTestimonialCardProps = {
-    testimonial: any
-}
-
-function MobileTestimonialCard({ testimonial }: MobileTestimonialCardProps) {
-    const numSlides = testimonial.messages.length
-    const [currentSlide, setCurrentSlide] = useState(0)
-    const currentMessage = testimonial.messages[currentSlide]
-
-    const handlePrevSlide = () => {
-        if (currentSlide === 0) return
-        setCurrentSlide(currentSlide - 1)
-    }
-
-    const handleNextSlide = () => {
-        if (currentSlide === numSlides - 1) return
-        setCurrentSlide(currentSlide + 1)
-    }
-
-    return (
-        <div className='relative block md:hidden'>
-            <div className="relative w-full rounded overflow-hidden">
-                <img src={testimonial.photo} className="absolute inset-0 w-full h-full object-cover" alt="" />
-                <div className='absolute inset-0 w-full h-full bg-black bg-opacity-75' />
-                <div className="relative inset-0 w-full h-full flex flex-col justify-between gap-8 p-8 text-white">
-                    <div className="text-2xl font-semibold">“{currentMessage}”</div>
-                    <div className="flex items-center gap-4">
-                        <img src={testimonial.photo} className="w-8 h-8 object-cover" alt="" />
-                        <div className="flex-1">
-                            <div className="text-base font-bold">{testimonial.user}</div>
-                            <div className="text-xs">{testimonial.userDesc}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button className='rounded-full bg-paprika-900 text-white p-4 absolute left-0 transform -translate-x-1/2 -translate-y-1/2 top-1/2' onClick={handlePrevSlide}><ChevronLeft /></button>
-            <button className='rounded-full bg-paprika-900 text-white p-4 absolute right-0 transform translate-x-1/2 -translate-y-1/2 top-1/2' onClick={handleNextSlide}><ChevronRight /></button>
-        </div>
-    )
-}
-
 type TestimonialCardProps = {
     testimonial: any
 }
@@ -166,7 +125,7 @@ type TestimonialCardProps = {
 function TestimonialCard({ testimonial }: TestimonialCardProps) {
     return (
         <div>
-            <DesktopTestimonialCard testimonial={testimonial} />
+            <ResponsiveTestimonialCard testimonial={testimonial} />
             {/* <MobileTestimonialCard testimonial={testimonial} /> */}
         </div>
     )
