@@ -31,14 +31,14 @@ export default function RootLayout({
         <meta httpEquiv="Expires" content="0" />
       </Head>
       {/* Global site tag (gtag.js) - Google Analytics */}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=GTM-NVS64HF" />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-778375246" />
       <Script id="google analytics">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'GTM-NVS64HF');
+          gtag('config', 'AW-778375246');
         `}
       </Script>
       {/* Event snippet for Sign-up conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. */}

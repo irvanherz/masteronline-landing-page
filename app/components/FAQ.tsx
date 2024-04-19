@@ -61,7 +61,7 @@ export default function FAQ() {
                         {FAQs.map(faq => (
                             <div key={faq.question} className="collapse collapse-arrow">
                                 <input type="checkbox" className="peer" />
-                                <div className="collapse-title text-sm md:text-xl lg:text-2xl font-semibold text-gray-500 peer-checked:text-paprika-900 px-0 pr-10 py-2 md:py-4">{faq.question} </div>
+                                <div className="collapse-title flex items-center text-sm md:text-xl lg:text-2xl font-semibold text-gray-500 peer-checked:text-paprika-900 px-0 pr-10 py-2 md:py-4">{faq.question} </div>
                                 <div className="collapse-content font-medium text-xs md:text-base lg:text-xl p-0 peer-checked:pb-8">{faq.answer}</div>
                             </div>
                         ))}
