@@ -311,7 +311,7 @@ export const PRICE_DETAILS = {
     },
     silver: {
         numMarketplaces: 'Unlimited',
-        numMonthlyOrders: '15.000',
+        numMonthlyOrders: '1.500',
         marketplaceIntegration: true,
         invoicingAndSalesAnalysis: true,
         shipmentManagement: true,
