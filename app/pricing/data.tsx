@@ -44,7 +44,7 @@ export const PACKAGES = [
         ),
         popular: false,
         includes: [
-            'Max 1.5k pesanan/bulan',
+            'Max 3k pesanan/bulan',
             'Unlimited toko',
             'Unlimited marketplace',
             'Max 2 user',
