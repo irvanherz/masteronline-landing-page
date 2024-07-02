@@ -48,7 +48,8 @@ export const PACKAGES = [
             'Unlimited toko',
             'Unlimited marketplace',
             'Max 2 user',
-            'Chat marketplace'
+            'Chat marketplace',
+            "Extra kuota Rp 150/pesanan"
         ],
         className: 'border-slate-300',
         icon: <LayersSharp className="text-slate-300 text-2xl" />,
@@ -77,7 +78,8 @@ export const PACKAGES = [
             'Unlimited toko',
             'Unlimited marketplace',
             'Max 5 user',
-            'Chat marketplace'
+            'Chat marketplace',
+            "Extra kuota Rp 150/pesanan"
         ],
         className: 'border-amber-300',
         icon: <LayersSharp className="text-amber-400 text-2xl" />,
@@ -108,7 +110,8 @@ export const PACKAGES = [
             'Max 5 user',
             'Chat marketplace',
             'Multi SKU',
-            'Bundling'
+            'Bundling',
+            "Extra kuota Rp 150/pesanan"
         ],
         className: 'border-sky-300',
         icon: <LayersSharp className="text-sky-300 text-2xl" />,
@@ -140,7 +143,7 @@ export const PACKAGES = [
             'Chat marketplace',
             'Multi SKU',
             'Bundling',
-            "Extra kuota Rp 50/pesanan"
+            "Extra kuota Rp 150/pesanan"
         ],
         className: 'border-slate-200',
         icon: <LayersSharp className="text-slate-200 text-2xl" />,
