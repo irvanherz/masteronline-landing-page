@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Setup And Maintenance landing Page MO
 
-## Getting Started
+### **Perubahan Konfigurasi IIS untuk Landing Page**
 
-First, run the development server:
+1. **Fixing Bug dan Build Source**
+   - Setelah memperbaiki bug pada landing page, lakukan build source (langkah-langkah build ada di bawah).
+   - Output build berupa file HTML → Copy ke folder `publish MO` → `landing-page`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Install Plugin IIS (Hanya untuk Pertama Kali)**
+   - Install URL Rewrite Module dari link berikut: [Download URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Penyesuaian Konfigurasi IIS**
+   - Buka file `Web.config`.
+   - Sesuaikan konfigurasi berikut pada bagian `<system.webServer>`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```xml
+   <system.webServer>
+     <rewrite>
+       <rules>
+         <rule name="home" stopProcessing="true">
+           <match url="^$" />
+           <action type="Rewrite" url="/landing-page/index.html" />
+         </rule>
+         <rule name="about" stopProcessing="true">
+           <match url="^about$" />
+           <action type="Rewrite" url="/landing-page/about.html" />
+         </rule>
+         <rule name="pricing" stopProcessing="true">
+           <match url="^pricing$" />
+           <action type="Rewrite" url="/landing-page/pricing.html" />
+         </rule>
+         <rule name="terms-of-service" stopProcessing="true">
+           <match url="^terms-of-service$" />
+           <action type="Rewrite" url="/landing-page/terms-of-service.html" />
+         </rule>
+       </rules>
+     </rewrite>
+     <validation validateIntegratedModeConfiguration="false" />
+     <modules>
+       <remove name="ApplicationInsightsWebTracking" />
+       <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" />
+     </modules>
+     <handlers>
+     ...
+   </system.webServer>
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Backup Konfigurasi**
+   - Jika diperlukan, backup file `Web.config` sebelum melakukan perubahan.
 
-## Learn More
+### **Cara Publish Jika Ada Perubahan di Landing Page**
 
-To learn more about Next.js, take a look at the following resources:
+1. **Install Node.js (Jika Belum Ada)**
+   - Download dan install Node.js: [Download Node.js](https://nodejs.org/en/download/current).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Pull Repository**
+   - Clone atau pull repository landing page:
+     ```bash
+     git clone https://github.com/irvanherz/masteronline-landing-page
+     ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Install Dependencies (Untuk Pertama Kali Saja)**
+   - Install dependencies dengan menjalankan perintah:
+     ```bash
+     npm install
+     ```
 
-## Deploy on Vercel
+4. **Build Project**
+   - Build project menggunakan salah satu perintah berikut:
+     ```bash
+     npm run build:dev
+     ```
+     atau
+     ```bash
+     npm run build:prod
+     ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. **Copy Hasil Build ke Server**
+   - Copy semua isi folder `out` ke folder `landing-page` di server aplikasi, dan timpa file yang ada.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+Dengan format ini, setiap langkah lebih jelas dan mudah diikuti, serta mencakup semua instruksi penting untuk melakukan perubahan dan publish landing page.
