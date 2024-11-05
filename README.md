@@ -1,4 +1,6 @@
-# Setup And Maintenance landing Page MO
+# Landing Page MO
+
+The "masteronline-landing-page" project is a web application designed to serve as a promotional landing page. It is built using modern web technologies and aims to provide users with an engaging and informative experience. This repository includes all necessary configurations and steps to deploy the landing page on an IIS server.
 
 ### **Perubahan Konfigurasi IIS untuk Landing Page**
 
@@ -77,7 +79,3 @@
 
 5. **Copy Hasil Build ke Server**
    - Copy semua isi folder `out` ke folder `landing-page` di server aplikasi, dan timpa file yang ada.
-
----
-
-Dengan format ini, setiap langkah lebih jelas dan mudah diikuti, serta mencakup semua instruksi penting untuk melakukan perubahan dan publish landing page.
