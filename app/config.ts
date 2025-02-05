@@ -1,13 +1,13 @@
 const BUSINESS_PARTNER_URLS = {
-    production: 'https://bisnispartner.masteronline.co.id',
-    development: 'https://devbisnis.masteronline.co.id',
-    default: 'https://devbisnis.masteronline.co.id',
+  production: 'https://bisnispartner.masteronline.co.id',
+  development: 'https://devbisnis.masteronline.co.id',
+  default: 'https://devbisnis.masteronline.co.id',
 }
 
 const IMAGE_BASEURLS = {
-    production: '/landing-page',
-    development: '/landing-page',
-    default: '',
+  production: '/landing-page',
+  development: '/landing-page',
+  default: '',
 }
 
 export const IMAGE_BASEURL = IMAGE_BASEURLS[process.env.NEXT_PUBLIC_STAGE as keyof typeof IMAGE_BASEURLS] || IMAGE_BASEURLS.default

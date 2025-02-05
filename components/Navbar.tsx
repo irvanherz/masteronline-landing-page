@@ -117,8 +117,8 @@ export default function Navbar({ activeKey, theme = "default" }: NavbarProps) {
                     ? "font-bold text-paprika-100"
                     : "text-paprika-900"
                   : theme === "red"
-                  ? "text-white"
-                  : "text-black"
+                    ? "text-white"
+                    : "text-black"
               )}
             >
               {item.name}

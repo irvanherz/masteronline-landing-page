@@ -69,6 +69,9 @@ importers:
       '@stylistic/eslint-plugin-jsx':
         specifier: ^2.13.0
         version: 2.13.0(eslint@9.13.0(jiti@1.21.7))
+      '@stylistic/eslint-plugin-ts':
+        specifier: ^3.0.1
+        version: 3.0.1(eslint@9.13.0(jiti@1.21.7))(typescript@5.7.3)
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
         version: 0.4.2(tailwindcss@3.4.17)
@@ -692,6 +695,12 @@ packages:
 
   '@stylistic/eslint-plugin-jsx@2.13.0':
     resolution: {integrity: sha512-mRAJPYTASnjMZ3Z1hxMuRNI6xcvKNGvPN6oNiR30DG3CdIt/STWkDhVs+nrcdcKh7atGlK5yHhnCfkmoJmHTbw==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: '>=8.40.0'
+
+  '@stylistic/eslint-plugin-ts@3.0.1':
+    resolution: {integrity: sha512-fBPKvYhp3KPlww9lZVe2htMwQZ/uh1v1Een6G2jnRpHWoQZfZ/qIhhWge7ovBtnK0z9QBa/DhBaBqcm7ZcLYKw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -3073,6 +3082,16 @@ snapshots:
       espree: 10.3.0
       estraverse: 5.3.0
       picomatch: 4.0.2
+
+  '@stylistic/eslint-plugin-ts@3.0.1(eslint@9.13.0(jiti@1.21.7))(typescript@5.7.3)':
+    dependencies:
+      '@typescript-eslint/utils': 8.23.0(eslint@9.13.0(jiti@1.21.7))(typescript@5.7.3)
+      eslint: 9.13.0(jiti@1.21.7)
+      eslint-visitor-keys: 4.2.0
+      espree: 10.3.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   '@swc/counter@0.1.3': {}
 

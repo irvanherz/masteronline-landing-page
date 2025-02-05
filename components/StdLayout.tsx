@@ -5,20 +5,20 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 
 type StdLayoutProps = {
-    children: ReactNode
-    className?: string
-    wrapperClassName?: string
-    showNavbar?: boolean
-    activeKey?: string
+  children: ReactNode
+  className?: string
+  wrapperClassName?: string
+  showNavbar?: boolean
+  activeKey?: string
 }
 
 export default function StdLayout({ children, className, wrapperClassName, activeKey, showNavbar = true }: StdLayoutProps) {
-    return (
-      <div className={classNames('block', className)}>
-        {showNavbar && <Navbar activeKey={activeKey} />}
-        <main className={wrapperClassName}>{children}</main>
-        <Footer />
-        <ContactFloatingButton />
-      </div>
-    )
+  return (
+    <div className={classNames('block', className)}>
+      {showNavbar && <Navbar activeKey={activeKey} />}
+      <main className={wrapperClassName}>{children}</main>
+      <Footer />
+      <ContactFloatingButton />
+    </div>
+  )
 }
