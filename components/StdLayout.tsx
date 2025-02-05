@@ -14,11 +14,11 @@ type StdLayoutProps = {
 
 export default function StdLayout({ children, className, wrapperClassName, activeKey, showNavbar = true }: StdLayoutProps) {
     return (
-        <div className={classNames('block', className)}>
-            {showNavbar && <Navbar activeKey={activeKey} />}
-            <main className={wrapperClassName}>{children}</main>
-            <Footer />
-            <ContactFloatingButton />
-        </div>
+      <div className={classNames('block', className)}>
+        {showNavbar && <Navbar activeKey={activeKey} />}
+        <main className={wrapperClassName}>{children}</main>
+        <Footer />
+        <ContactFloatingButton />
+      </div>
     )
 }

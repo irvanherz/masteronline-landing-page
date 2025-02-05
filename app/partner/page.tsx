@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function Partner() {
     return (
-        <StdLayout className="bg-white" activeKey="partner">
-            <About />
-            <Registration />
-        </StdLayout>
+      <StdLayout className="bg-white" activeKey="partner">
+        <About />
+        <Registration />
+      </StdLayout>
     )
 }

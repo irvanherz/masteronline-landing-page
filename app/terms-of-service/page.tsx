@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
     return (
-        <StdLayout className="bg-neutral-100 text-black">
-            <TosCards />
-        </StdLayout>
+      <StdLayout className="bg-neutral-100 text-black">
+        <TosCards />
+      </StdLayout>
     )
 }

@@ -24,5 +24,8 @@ export default [
       "@typescript-eslint/no-explicit-any": "off",
       "@stylistic/jsx/jsx-indent": ["error", 2],
     }
+  },
+  {
+    ignores: ['out/'],
   }
 ];

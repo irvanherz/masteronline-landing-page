@@ -42,21 +42,21 @@ type IntegrationCardProps = {
 
 function IntegrationCard({ integration }: IntegrationCardProps) {
     return (
-        <div className="col-span-1 text-center px-4 md:px-0">
-            <img src={integration.icon} alt={integration.title} className="inline-block w-full max-w-[160px]" />
-        </div>
+      <div className="col-span-1 text-center px-4 md:px-0">
+        <img src={integration.icon} alt={integration.title} className="inline-block w-full max-w-[160px]" />
+      </div>
     )
 }
 
 export default function Integrations() {
     return (
-        <div className="bg-black text-white">
-            <div className="container px-8 lg:px-32 py-12 md:py-18 lg:py-24 mx-auto space-y-8">
-                <div className="text-xs md:text-base text-center font-medium">TERINTEGRASI DENGAN</div>
-                <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-8">
-                    {INTEGRATIONS.map(i => <IntegrationCard key={i.id} integration={i} />)}
-                </div>
-            </div>
+      <div className="bg-black text-white">
+        <div className="container px-8 lg:px-32 py-12 md:py-18 lg:py-24 mx-auto space-y-8">
+          <div className="text-xs md:text-base text-center font-medium">TERINTEGRASI DENGAN</div>
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-8">
+            {INTEGRATIONS.map(i => <IntegrationCard key={i.id} integration={i} />)}
+          </div>
         </div>
+      </div>
     )
 }

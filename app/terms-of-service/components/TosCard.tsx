@@ -39,16 +39,16 @@ const TERMS = [
 
 export function TosCard({ id, title, subtitle, children }: TosCardProps) {
     return (
-        <div id={id} className="flex flex-col gap-4">
-            <div className='space-y-2 text-center'>
-                <div className='inline-block w-32 h-1 bg-paprika-900' />
-                <div className="font-bold text-2xl lg:text-4xl">{title}</div>
-                <div className="font-semibold">{subtitle}</div>
-            </div>
-            <div className="shadow-lg bg-white p-8">
-                {children}
-            </div>
+      <div id={id} className="flex flex-col gap-4">
+        <div className='space-y-2 text-center'>
+          <div className='inline-block w-32 h-1 bg-paprika-900' />
+          <div className="font-bold text-2xl lg:text-4xl">{title}</div>
+          <div className="font-semibold">{subtitle}</div>
         </div>
+        <div className="shadow-lg bg-white p-8">
+          {children}
+        </div>
+      </div>
     )
 }
 
@@ -61,19 +61,19 @@ export default function TosCards() {
     }, [params])
 
     return (
-        <div className="container py-16 px-8 mx-auto flex flex-col gap-8">
-            {TERMS.map(c => (
-                <Element key={c.id} name={c.id}>
-                    <TosCard
+      <div className="container py-16 px-8 mx-auto flex flex-col gap-8">
+        {TERMS.map(c => (
+          <Element key={c.id} name={c.id}>
+            <TosCard
                         id={c.id}
                         title={c.title}
                         subtitle={c.subtitle}
                         key={c.id}
                     >
-                        {c.content}
-                    </TosCard>
-                </Element>
+              {c.content}
+            </TosCard>
+          </Element>
             ))}
-        </div>
+      </div>
     )
 }

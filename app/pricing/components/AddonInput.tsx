@@ -35,11 +35,11 @@ export const MultiuserNumInput = memo(({ id, min = 0, max = 10 }: MultiuserNumIn
         })
     }
     return (
-        <div className='inline-flex w-auto justify-center items-center'>
-            <button disabled={isDecDisabled} onClick={handleDec} className='flex-none bg-paprika-900 disabled:bg-paprika-100 w-5 h-5 rounded text-white'>-</button>
-            <input readOnly={true} value={value} className='text-center w-10' />
-            <button disabled={isIncDisabled} onClick={handleInc} className='flex-none bg-paprika-900 disabled:bg-paprika-100 w-5 h-5 rounded text-white'>+</button>
-        </div>
+      <div className='inline-flex w-auto justify-center items-center'>
+        <button disabled={isDecDisabled} onClick={handleDec} className='flex-none bg-paprika-900 disabled:bg-paprika-100 w-5 h-5 rounded text-white'>-</button>
+        <input readOnly={true} value={value} className='text-center w-10' />
+        <button disabled={isIncDisabled} onClick={handleInc} className='flex-none bg-paprika-900 disabled:bg-paprika-100 w-5 h-5 rounded text-white'>+</button>
+      </div>
     )
 })
 
@@ -67,9 +67,9 @@ export const AddonCheckboxInput = memo(({ id, featureId, price, children }: Addo
     }
 
     return (
-        <div className='space-y-1 text-center'>
-            <input id={inputId} type='checkbox' className='inline-block' checked={checked} onChange={handleChangeValue} />
-            <label className='block' htmlFor={inputId}>{children}</label>
-        </div>
+      <div className='space-y-1 text-center'>
+        <input id={inputId} type='checkbox' className='inline-block' checked={checked} onChange={handleChangeValue} />
+        <label className='block' htmlFor={inputId}>{children}</label>
+      </div>
     )
 })

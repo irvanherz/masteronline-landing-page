@@ -27,7 +27,7 @@ export function PricingTableContextProvider({ children }: PricingTableContextPro
 
     const handleUpsertExtra = (e: ExtraFee) => {
         const newExtras = [...extras]
-        let existingIdx = newExtras.findIndex(c => c.id === e.id && c.featureId == e.featureId)
+        const existingIdx = newExtras.findIndex(c => c.id === e.id && c.featureId == e.featureId)
         if (existingIdx !== -1)
             newExtras[existingIdx] = e
         else
@@ -36,11 +36,11 @@ export function PricingTableContextProvider({ children }: PricingTableContextPro
 
     }
     return (
-        <PricingTableContext.Provider value={{
+      <PricingTableContext.Provider value={{
             extras, setExtras, upsertExtra: handleUpsertExtra
         }}>
-            {children}
-        </PricingTableContext.Provider>
+        {children}
+      </PricingTableContext.Provider>
     )
 }
 

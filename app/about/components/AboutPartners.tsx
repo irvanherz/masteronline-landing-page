@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { IMAGE_BASEURL } from "@/app/config";
 import classNames from "classnames";
 
@@ -97,14 +98,15 @@ const ECOMMERCE_PARTNERS = [
     className: "bg-purple-50",
     linkClassName: "text-purple-800 hover:text-purple-600",
   },
+];
+
+const WMS_PARTNERS = [
   {
     id: "autobos",
     title: "Autobos",
     desc: "Autobos adalah Warehouse Management System (WMS) dengan tekonologi AI yang akan membantu Anda menghemat waktu dan uang dalam proses pemenuhan pesanan. Coba gratis dan rasakan bedanya!",
     icon: `${IMAGE_BASEURL}/images/autobos-logo.svg`,
     url: "https://autobos.co.id",
-    className: "bg-teal-50",
-    linkClassName: "text-teal-800 hover:text-teal-600",
   },
 ];
 
@@ -361,10 +363,26 @@ export function AboutPartnerPOS() {
   );
 }
 
-export function AboutPartnerLM() {
+export function AboutPartnerLoyaltyManagement() {
   return (
     <PartnerGroupCard title="Partner Loyalty Management">
       {LOYALTY_MANAGEMENT_PARTNERS.map((c) => (
+        <PartnerItemCardD
+          key={c.id}
+          title={c.title}
+          desc={c.desc}
+          icon={c.icon}
+          url={c.url}
+        />
+      ))}
+    </PartnerGroupCard>
+  );
+}
+
+export function AboutPartnerWms() {
+  return (
+    <PartnerGroupCard title="Partner Warehouse Management System">
+      {WMS_PARTNERS.map((c) => (
         <PartnerItemCardD
           key={c.id}
           title={c.title}

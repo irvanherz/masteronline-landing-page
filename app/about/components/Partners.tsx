@@ -9,8 +9,9 @@ import { AboutErasoft, AboutMasterOnline } from "./AboutCompany";
 import {
   AboutPartnerAccounting,
   AboutPartnerEcommerce,
-  AboutPartnerLM,
+  AboutPartnerLoyaltyManagement,
   AboutPartnerMarketplace,
+  AboutPartnerWms,
 } from "./AboutPartners";
 
 const SECTIONS = [
@@ -45,6 +46,11 @@ const SECTIONS = [
         content: <AboutPartnerEcommerce />,
       },
       {
+        id: "partner-wms",
+        title: "Warehouse Management System",
+        content: <AboutPartnerWms />,
+      },
+      {
         id: "partner-accounting",
         title: "Accounting/ERP",
         content: <AboutPartnerAccounting />,
@@ -57,7 +63,7 @@ const SECTIONS = [
       {
         id: "partner-lm",
         title: "Loyalty Management",
-        content: <AboutPartnerLM />,
+        content: <AboutPartnerLoyaltyManagement />,
       },
     ],
   },
