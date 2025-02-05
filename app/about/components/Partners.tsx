@@ -1,22 +1,22 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
+   import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+   import { useEffect, useRef } from "react";
 import { Element, Link, scrollSpy } from "react-scroll";
 import { useMediaQuery } from "usehooks-ts";
 import { AboutErasoft, AboutMasterOnline } from "./AboutCompany";
 import {
   AboutPartnerAccounting,
   AboutPartnerEcommerce,
-  AboutPartnerLoyaltyManagement,
+     AboutPartnerLoyaltyManagement,
   AboutPartnerMarketplace,
   AboutPartnerWms,
 } from "./AboutPartners";
 
 const SECTIONS = [
   {
-    id: "our-company",
+       id: "our-company",
     title: "Perusahaan Kami",
     subsections: [
       {
